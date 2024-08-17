@@ -1,0 +1,14 @@
+{
+  "name": "im-popup",
+  "version": "2.2.4",
+  "description": "popup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vadi4",
+  "license": "ISC",
+  "dependencies": {
+    "im-insert-html": "^1.0.1"
+  }
+}

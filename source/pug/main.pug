@@ -1,0 +1,37 @@
+extends template.pug
+
+block title
+	title main
+	- var page_class = 'p-main';
+
+block content
+	a(data-id="popup" data-after_load="afterLoad" href="/some/path").btn.im-popup-link Open popup with fetch path from href
+	<br/>
+	a(data-id="popup" data-after_load="afterLoad" data-href="/some/path").btn.im-popup-link
+		span Open popup with fetch path from data-href
+	<br/>
+	a(data-id="popup" data-after_load="afterLoad").btn.im-popup-link
+		span Open static popup
+	<br/>
+	a(href="#popup").btn.im-popup-link
+		span get id from href with #
+	<br/>
+	a(href="#nullpopup").btn.im-popup-link
+		span when open undefined popup
+	// .im-popups(data-single-active="true")
+	.im-popups
+		#popup(data-close-popup="true" data-static="true" data-after_load="afterLoadPopup").im-popup
+			.im-popup-inside
+				.b-popup
+					a.b-popup__close(href='#') x
+					p Content
+					<br/>
+					a(data-id="inner-popup").btn.im-popup-link Открыть вложенный попап
+					<br/>
+					a(data-id="popup" data-href="/some/path" data-close-other="true").btn.im-popup-link Открыть вложенный попап и закрыть остальные
+		#inner-popup(data-close-popup="true" data-static="true").im-popup
+			.im-popup-inside
+				.b-popup
+					a.b-popup__close(href='#') x
+					p Content
+						a(href="#" data-close-popup="true") закрытие на кастомный атрибут

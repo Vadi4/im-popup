@@ -1,0 +1,1 @@
+{"result": 1, "message": "<div class='im-popup' id='popup' data-after_load='afterLoadPopup'><div class='im-popup-inside'><div class='b-popup'><a class='b-popup__close' href='#''>x</a><p>Content</p><a class='btn im-popup-link' data-id='popup' href='/some/path' data-close-other='true'>Open popup with fetch path from href</a></div></div></div>"}
