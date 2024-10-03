@@ -17,3 +17,15 @@ let popupLoad = ($popup) => {
 let popupClose = ($popup) => {
 	console.log($popup);
 }
+
+document.addEventListener('popup.open', e => {
+	
+	console.log('initiator on open', e.detail.initiator);
+
+});
+
+document.addEventListener('popup.close', e => {
+	
+	console.log('target on close', e.detail.target);
+
+});

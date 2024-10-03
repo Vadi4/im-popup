@@ -1,6 +1,6 @@
 {
   "name": "im-popup",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "popup",
   "main": "index.js",
   "scripts": {

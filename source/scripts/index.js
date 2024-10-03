@@ -1,4 +1,4 @@
-// CURRENT IMPOPUP VERSION 2.2.5
+// CURRENT IMPOPUP VERSION 2.2.6
 
 
 // OPTIONS AND SETTINGS
@@ -79,7 +79,7 @@ imPopup = (options) => {
 		}
 
 		// CLOSING EVENTS
-		if ( $target.closest('.b-popup__close') || $target.getAttribute('data-close-popup') ) {
+		if ( $target.closest('.b-popup__close') || $target.closest('[data-close-popup]') ) {
 
 			e.preventDefault();
 			imPopup.close( $target.closest('.im-popup').getAttribute('id') );
@@ -133,6 +133,15 @@ imPopup = (options) => {
 
 					opening = false;
 
+					const $initiatorLink = ($target && $target.closest('.im-popup-link')) ? $target.closest('.im-popup-link') : null;
+
+					$popup.dispatchEvent(new CustomEvent('popup.open', {
+						bubbles: true,
+						cancelable: true,
+						view: window,
+						detail: {initiator: $initiatorLink}
+					}));
+
 
 					if( $popup.getAttribute('data-after_load') ) {
 						_afterLoad($popup.getAttribute('data-after_load'), $target);
@@ -174,6 +183,13 @@ imPopup = (options) => {
 			if(!dynamic) imPopup._clearFormErrors($popup);
 
 			closing = false;
+
+				$popup.dispatchEvent(new CustomEvent('popup.close', {
+					bubbles: true,
+					cancelable: true,
+					view: window,
+					detail: {target: $popup}
+				}));
 
 			if( typeof popupClose == 'function'){
 				return popupClose($popup);
@@ -289,3 +305,4 @@ imPopup = (options) => {
 }
 
 imPopup = imPopup();
+window.imPopup = imPopup; // form global 
