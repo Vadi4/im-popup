@@ -205,19 +205,19 @@ imPopup = (options) => {
 
 			// FOR LOCAL DEBUG
 			
-			fetch(
-				'/response.json',
-				{
-					method: 'GET'
-				}
-
 			// fetch(
-			// 	_href,
+			// 	'/response.json',
 			// 	{
-			// 		method: 'POST',
-			// 		body: formData,
-			// 		headers: headers
+			// 		method: 'GET'
 			// 	}
+
+			fetch(
+				_href,
+				{
+					method: 'POST',
+					body: formData,
+					headers: headers
+				}
 			).then(
 				response => response.json()
 			).then( 
