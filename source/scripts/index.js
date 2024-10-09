@@ -202,8 +202,9 @@ imPopup = (options) => {
 			let formData = new FormData();
 
 			if( $target && $target.closest('.im-popup-link') ) {
-				let dataset = $target.closest('.im-popup-link').dataset;
+				if(!dataset) dataset = $target.closest('.im-popup-link').dataset;
 			}
+
 
 			if(dataset){
 				for (const field of Object.keys(dataset)) {
@@ -224,7 +225,7 @@ imPopup = (options) => {
 			// fetch(
 			// 	'/response.json',
 			// 	{
-			// 		method: 'GET'
+			// 		method: 'GET',
 			// 	}
 
 			fetch(
