@@ -1,4 +1,4 @@
-// CURRENT IMPOPUP VERSION 2.2.6
+// CURRENT IMPOPUP VERSION 2.2.8
 
 
 // OPTIONS AND SETTINGS
@@ -79,7 +79,7 @@ imPopup = (options) => {
 		}
 
 		// CLOSING EVENTS
-		if ( $target.closest('.b-popup__close') || $target.closest('[data-close-popup]') ) {
+		if ( $target.closest('.b-popup__close') || $target.closest('[data-close-link]') || $target.getAttribute('data-close-popup') ) {
 
 			e.preventDefault();
 			imPopup.close( $target.closest('.im-popup').getAttribute('id') );
