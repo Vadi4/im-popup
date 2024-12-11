@@ -1,4 +1,4 @@
-// CURRENT IMPOPUP VERSION 2.2.8
+// CURRENT IMPOPUP VERSION 2.2.9
 
 
 // OPTIONS AND SETTINGS
@@ -157,7 +157,6 @@ imPopup = (options) => {
 			}	
 		},
 		close(id) {
-			closing = true;
 
 			let $popup;
 
@@ -168,6 +167,9 @@ imPopup = (options) => {
 			}
 
 			if ( !$popup ) return;
+
+
+			closing = true;
 			
 
 			setTimeout(() => {
