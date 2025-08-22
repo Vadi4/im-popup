@@ -41,9 +41,16 @@ let _afterLoad = (functions, $target) => {
 }
 // END AFTER LOAD
 
+const isInited = window.imPopup ? true : false; // если уже попап инициализирован
+
 let imPopup = null;
 
+
+
 imPopup = (options) => {
+
+	if( isInited ) return;
+
 	const ANIMATION_SPEED = 250;
 	let closing = false;
 	let opening = false;
