@@ -11,7 +11,7 @@
 * FOR .IM-POPUP-LINK 
 * @href - path for calling fetch,
 * @data-href - second path for calling fetch,
-* if href strarth with # it's means open statis popup #id - where id popup
+* if href starts with # it's means open static popup #id - where id popup
 * @data-after_load="fName" - attribute is a name of calling function
 * @data-close-other="true" - close other opened popups
 * 
@@ -19,7 +19,7 @@
 * @data-after_load="fName" - attribute is a name of calling function  
 * @data-close-popup="true" - outer click closing
 * @data-close-link="true" - on click close current popup
-* @data-static="true" - dont remove html of popup after closing
+* @data-static="true" - don't remove html of popup after closing
 * 
 * EVENTS
 * @imPopup.open('popup') - open with id
